@@ -1,0 +1,89 @@
+﻿<style>
+form{margin:0;padding:0;}
+.tab{
+background-color:#334F8D;
+cursor:move;
+height:25px;
+overflow:hidden;
+width:100%;
+color:#fff;
+}
+#editlink{padding:5px;}
+</style>
+<table class="tab" width="100%" id="addlinks"><tr><td>添加链接到留言</td><td align="right"><a href='#' onClick="$('#addlinks').parent().hide();return false;"> <img border="0" src="http://zhiqiang.org/blog/wp-includes/js/tinymce/plugins/inlinepopups/images/window_close.gif"/></a></td></tr></table>
+<form id='editlink' action="#" onSubmit="top.document.editComment.callback(true, getValue());return false;">
+	<div class="panel_wrapper" >
+		<div class="panel current" id="general_panel" style="text-align:center;">
+
+		<table cellspacing="0" cellpadding="4" border="0" align="center">
+          <tbody><tr>
+            <td nowrap="nowrap" align="right"><label for="href">链接地址</label></td>
+            <td><table cellspacing="0" cellpadding="0" border="0"> 
+				  <tbody><tr> 
+					<td><input type="text" style="width: 200px;" value="" name="href" id="href" onBlur="checkHTTP();" tabindex="1000"/></td> 
+					<td id="hrefbrowsercontainer"/>
+				  </tr> 
+				</tbody></table></td>
+          </tr>
+
+          <tr>
+            <td nowrap="nowrap" align="right"><label for="target">窗口</label></td>
+            <td><select style="width: 200px;" name="target" id="target">
+				<option value="_blank">新窗口打开此链接</option>
+                <option value="_self">原窗口打开此链接</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td nowrap="nowrap"><label for="linktitle">链接文本</label></td>
+            <td><input type="text" style="width: 200px;" value="" name="linktitle" id="linktitle" tabindex="1001"/></td>
+          </tr>
+        </tbody></table>
+		</div>
+	</div>
+
+	<div class="mceActionPanel" style="padding:0 15px;">
+		<!-- WordPress: Buttons are reversed! -->
+		<div style="float: left;">
+			<input type="button" onClick="$('addlinks').parent().hide();" value="取消" name="cancel" id="cancel"/>
+		</div>
+
+		<div style="float: right;">
+			<input type="submit" value="添加链接" name="insert" id="insert" tabindex="1001"/>
+		</div>
+	</div>
+</form>
+
+<script type="text/javascript">
+function _$(e) {return document.getElementById(e);}
+function checkHTTP(){if(_$('href').value.substr(0, 7)!='http://') _$('href').value='http://'+_$('href').value;}
+function getValue() {
+	var v = top.document.editComment.selectText('comment');
+	if (_$('linktitle').value && _$('href').value !='http://' && _$('href')) {
+		checkHTTP();
+		v = '<a href="' + _$('href').value + '" target="' + _$('target').value + '">' +  _$('linktitle').value + '</a>';
+	}
+		
+	return v;
+}
+_$('linktitle').value = top.document.editComment.selectText('comment');
+_$('href').focus();
+
+
+function testKeyCode( evt, intKeyCode ) { 
+	if ( window.createPopup ) return evt.keyCode == intKeyCode; 
+	else return evt.which == intKeyCode; 
+} 
+function addKey(e, f, key, ctr, alt) {
+	if (typeof(e) == 'string') e = _$(e);
+	if (typeof(ctr) == 'undefined') ctr = false;
+	if (typeof(alt) == 'undefined') alt = false;
+	
+	e.onkeydown = function(evt) {
+		if (evt == null) evt = event;
+		if (evt.ctrlKey == ctr && evt.altKey == alt && testKeyCode(evt, key))
+			eval(f);
+	}
+}
+
+addKey(document, "top.document.editComment.callback(false);", 27);
+</script>

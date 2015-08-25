@@ -1,0 +1,13 @@
+/* CSS Document */
+
+/* If printing the page, get rid of the sidebar and comments */
+div#wrapper { width: 100%; }
+div#wrapper * { width: auto; }
+#header1, #header { margin: 0; padding: 0; display:none !important; }
+div#footer { margin: 0; padding: 0; display:none !important; }
+div#sidebar { margin: 0; padding: 0; display:none !important; }
+body, #wapper, #content, #innerleft, #left, #sidebar, #innersidebar { margin: 0 !important; padding:0 !important; border:0 solid #ccc !important;}
+#blog-title { display: none; }
+.comments { display: none; }
+
+

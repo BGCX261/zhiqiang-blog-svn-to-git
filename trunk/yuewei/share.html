@@ -1,0 +1,270 @@
+<style>
+#akst_form {
+	background: #999;
+	border: 1px solid #ddd;
+	display: none;
+	width: 350px;
+}
+#akst_form a {
+	text-decoration:none;
+}
+#akst_form a.akst_close {
+	color: #fff;
+	float: right;
+	margin: 5px;
+}
+#akst_form ul.tabs {
+	border: 1px solid #999;
+	list-style: none;
+	padding: 0;
+}
+#akst_form ul.tabs li {
+	background: #ccc;
+	border-bottom: 1px solid #999;
+	cursor: pointer;
+	float: left;
+	margin: 0 3px 0 0;
+	padding: 3px 5px 2px 5px;
+}
+#akst_form ul.tabs li.selected {
+	background: #fff;
+	border-bottom: 1px solid #fff;
+	cursor: default;
+	padding: 4px 5px 1px 5px;
+}
+#akst_form div.clear {
+	clear: both;
+	float: none;
+}
+#akst_social, #akst_email {
+	background: #fff;
+	border: 1px solid #fff;
+	padding: 10px;
+}
+#akst_social ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#akst_social ul li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 45%;
+}
+#akst_social ul li a {
+	background-position: 0 center;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	padding: 0 0 0 22px;
+	vertical-align: middle;
+}
+#akst_delicious {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/delicious.gif);
+}
+#akst_favoriting {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/favoriting.gif);
+}
+#akst_furl {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/furl.gif);
+}
+#akst_netscape {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/netscape.gif);
+}
+#akst_yahoo_myweb {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/yahoo_myweb.gif);
+}
+#akst_stumbleupon {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/stumbleupon.gif);
+}
+#akst_google_bmarks {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/google_bmarks.gif);
+}
+#akst_technorati {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/technorati.gif);
+}
+#akst_digg {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/digg.gif);
+}
+#akst_blinklist {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/blinklist.gif);
+}
+#akst_newsvine {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/newsvine.gif);
+}
+#akst_magnolia {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/magnolia.gif);
+}
+#akst_reddit {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/reddit.gif);
+}
+#akst_windows_live {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/windows_live.gif);
+}
+#akst_tailrank {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/tailrank.gif);
+}
+#akst_blogmarks {
+	background-image: url(/blog/wp-content/themes/yuewei/images/share/blogmarks.gif);
+}
+#akst_email {
+	display: none;
+	text-align: left;
+}
+#akst_email form, #akst_email fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+#akst_email fieldset legend {
+	display: none;
+}
+#akst_email ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#akst_email ul li {
+	margin: 0 0 7px 0;
+	padding: 0;
+}
+#akst_email ul li label {
+	color: #555;
+	display: block;
+	margin-bottom: 3px;
+}
+#akst_email ul li input {
+	padding: 3px 10px;
+}
+#akst_email ul li input.akst_text {
+	padding: 3px;
+	width: 280px;
+}
+.akst_share_link {
+	background: 1px 0 url(/blog/wp-content/themes/yuewei/images/share/share-icon-14x14.jpg) no-repeat;
+	padding: 0px 0 3px 22px;
+}
+
+
+</style>
+
+<div id="akst_form" style="display: block;">
+		<a class="akst_close" href="#" onclick="javascript:$(this).parent().parent().hide('slow'); return false;">关闭</a>
+		<ul class="tabs">
+			<li onclick="akst_share_tab('1');" class="selected" id="akst_tab1">网络书签</li>
+			<li onclick="akst_share_tab('2');" id="akst_tab2" class="">E-mail</li>
+		</ul>
+		<div class="clear"/>
+		<div id="akst_social" style="display: block;">
+			<ul>
+				<li><a id="akst_delicious" href="http://del.icio.us/post?url=http%3A%2F%2Fzhiqiang.org/blog/&title=Share+this+%E4%B8%AD%E6%96%87">Del.icio.us</a></li>
+				<li><a id="akst_favoriting" href="http://www.digbuzz.com/submit.php?url=http%3A%2F%2Fzhiqiang.org/blog/&qs_title=Share+this+%E4%B8%AD%E6%96%87">我挖网</a></li>
+				<li><a id="akst_furl" href="http://shuqian.qq.com/post?title=Share+this+%E4%B8%AD%E6%96%87&uri=http%3A%2F%2Fzhiqiang.org/blog/">QQ书签</a></li>
+				<li><a id="akst_netscape" href="http://www.shouker.com/mc/col/post2.aspx?title=Share+this+%E4%B8%AD%E6%96%87&surl=http%3A%2F%2Fzhiqiang.org/blog/">收客网</a></li>
+				<li><a id="akst_yahoo_myweb" href="http://cang.baidu.com/do/add?it=Share+this+%E4%B8%AD%E6%96%87&iu=http%3A%2F%2Fzhiqiang.org/blog/&dc=&fr=ien#nw=1">Baidu搜藏</a></li>
+				<li><a id="akst_stumbleupon" href="http://www.quzhai.com/main/newurl.jsp?title=Share+this+%E4%B8%AD%E6%96%87&url=http%3A%2F%2Fzhiqiang.org/blog/">趣摘网</a></li>
+				<li><a id="akst_google_bmarks" href="  http://www.google.com/bookmarks/mark?op=edit&bkmk=http%3A%2F%2Fzhiqiang.org/blog/&title=Share+this+%E4%B8%AD%E6%96%87">Google书签</a></li>
+				<li><a id="akst_technorati" href="http://www.technorati.com/faves?add=http%3A%2F%2Fzhiqiang.org/blog/">Technorati</a></li>
+				<li><a id="akst_digg" href="http://www.diglog.com/submit.aspx?act=like&returnurl=true&title=Share+this+%E4%B8%AD%E6%96%87&url=http%3A%2F%2Fzhiqiang.org/blog/&description=">DigLog</a></li>
+				<li><a id="akst_blinklist" href="http://fanfou.com/sharer?u=http%3A%2F%2Fzhiqiang.org/blog/&t=Share+this+%E4%B8%AD%E6%96%87">Fanfou分享</a></li>
+				<li><a id="akst_newsvine" href="http://www.365key.com/storeit.aspx?t=Share+this+%E4%B8%AD%E6%96%87&h=http%3A%2F%2Fzhiqiang.org/blog/">365key网摘</a></li>
+				<li><a id="akst_magnolia" href="http://www.facebook.com/share.php?u=http%3A%2F%2Fzhiqiang.org/blog/&title=Share+this+%E4%B8%AD%E6%96%87">FaceBook</a></li>
+				<li><a id="akst_reddit" href="http://my.poco.cn/fav/storeIt.php?t=Share+this+%E4%B8%AD%E6%96%87&u=http%3A%2F%2Fzhiqiang.org/blog/">POCO网摘</a></li>
+				<li><a id="akst_windows_live" href="https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&url=http%3A%2F%2Fzhiqiang.org/blog/&title=Share+this+%E4%B8%AD%E6%96%87&top=1">Windows Live</a></li>
+				<li><a id="akst_tailrank" href="http://vivi.sina.com.cn/collect/icollect.php?pid=28&title=Share+this+%E4%B8%AD%E6%96%87&url=http%3A%2F%2Fzhiqiang.org/blog/">新浪 vivi</a></li>
+				<li><a id="akst_blogmarks" href="http://myweb2.search.yahoo.com/myresults/bookmarklet?u=http%3A%2F%2Fzhiqiang.org/blog/&title=Share+this+%E4%B8%AD%E6%96%87">Yahoo书签</a></li>
+			</ul>
+			<div class="clear"/>
+		</div>
+		<div id="akst_email" style="display: none;">
+			<form method="post" action="/blog/wp-content/themes/yuewei/share.php">
+				<fieldset>
+					<legend>E-mail It</legend>
+					<ul>
+						<li>
+							<label>发送到:</label>
+							<input type="text" class="akst_text" value="" name="akst_to" tabindex="131"/>
+						</li>
+						<li>
+							<label>你的名字:</label>
+							<input type="text" class="akst_text" value="" name="akst_name" tabindex="132"/>
+						</li>
+						<li>
+							<label>你的邮件:</label>
+							<input type="text" class="akst_text" value="" name="akst_email" tabindex="133"/>
+						</li>
+						<li>
+							<input type="submit" value="Send It" name="akst_submit" tabindex="134"/>
+						</li>
+					</ul>
+					<input type="hidden" value="send_mail" name="akst_action"/>
+					<input type="hidden" value="328" id="akst_post_id" name="akst_post_id"/>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	
+<script type="text/javascript">
+function akst_share(id, url, title) {
+	var form = _$('akst_form');
+	var post_id = _$('akst_post_id');
+	
+	if (form.style.display == 'block' && post_id.value == id) {
+		form.style.display = 'none';
+		return;
+	}
+
+	_$("akst_delicious").href = akst_share_url("http://del.icio.us/post?url={url}&title={title}", url, title);
+	_$("akst_favoriting").href = akst_share_url("http://www.digbuzz.com/submit.php?url={url}&qs_title={title}", url, title);
+	_$("akst_furl").href = akst_share_url("http://shuqian.qq.com/post?title={title}&uri={url}", url, title);
+	_$("akst_netscape").href = akst_share_url("http://www.shouker.com/mc/col/post2.aspx?title={title}&surl={url}", url, title);
+	_$("akst_yahoo_myweb").href = akst_share_url("http://cang.baidu.com/do/add?it={title}&iu={url}&dc=&fr=ien#nw=1", url, title);
+	_$("akst_stumbleupon").href = akst_share_url("http://www.quzhai.com/main/newurl.jsp?title={title}&url={url}", url, title);
+	_$("akst_google_bmarks").href = akst_share_url("  http://www.google.com/bookmarks/mark?op=edit&bkmk={url}&title={title}", url, title);
+	_$("akst_technorati").href = akst_share_url("http://www.technorati.com/faves?add={url}", url, title);
+	_$("akst_digg").href = akst_share_url("http://www.diglog.com/submit.aspx?act=like&returnurl=true&title={title}&url={url}&description=", url, title);
+	_$("akst_blinklist").href = akst_share_url("http://fanfou.com/sharer?u={url}&t={title}", url, title);
+	_$("akst_newsvine").href = akst_share_url("http://www.365key.com/storeit.aspx?t={title}&h={url}", url, title);
+	_$("akst_magnolia").href = akst_share_url("http://www.facebook.com/share.php?u={url}&title={title}", url, title);
+	_$("akst_reddit").href = akst_share_url("http://my.poco.cn/fav/storeIt.php?t={title}&u={url}", url, title);
+	_$("akst_windows_live").href = akst_share_url("https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&url={url}&title={title}&top=1", url, title);
+	_$("akst_tailrank").href = akst_share_url("http://vivi.sina.com.cn/collect/icollect.php?pid=28&title={title}&url={url}", url, title);
+	_$("akst_blogmarks").href = akst_share_url("http://myweb2.search.yahoo.com/myresults/bookmarklet?u={url}&title={title}", url, title);
+}
+
+function akst_share_url(base, url, title) {
+	base = base.replace('{url}', url);
+	return base.replace('{title}', title);
+}
+
+function akst_share_tab(tab) {
+	var tab1 = document.getElementById('akst_tab1');
+	var tab2 = document.getElementById('akst_tab2');
+	var body1 = document.getElementById('akst_social');
+	var body2 = document.getElementById('akst_email');
+	
+	switch (tab) {
+		case '1':
+			tab2.className = '';
+			tab1.className = 'selected';
+			body2.style.display = 'none';
+			body1.style.display = 'block';
+			break;
+		case '2':
+			tab1.className = '';
+			tab2.className = 'selected';
+			body1.style.display = 'none';
+			body2.style.display = 'block';
+			break;
+	}
+}
+
+function akst_xy(id) {
+	var element = _$(id);
+	var x = 0;
+	var y = 0;
+}
+
+akst_share('', window.location, document.title);
+</script>

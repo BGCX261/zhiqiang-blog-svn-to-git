@@ -1,0 +1,20 @@
+<?php get_header(); ?>
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		<div class="sc"><?php corner_start("post");?>
+			<h2 id="post-<?php the_ID(); ?>"><?php the_title(); ?></h2>
+			<div class="postentry">	
+			<?php the_content("<p>__('Read the rest of this page &raquo;')</p>"); ?>
+			<?php wp_link_pages(); ?>
+			
+			<?php edit_post_link(__('Edit'), '<p>', '</p>'); ?>
+			</div>
+			<?php comments_template(); ?>
+		<?php corner_end();?></div>
+	<?php endwhile; endif; ?>
+
+
+<?php get_sidebar(); 
+?>
+<?php //include (TEMPLATEPATH . '/indexsidebar.php'); 
+?>
+<?php get_footer(); ?>
